@@ -51,6 +51,7 @@ public class Solution {
 }
 ```
 但是实际运行后发现`ans`中的数组全部为空：
+
 ![Alt text](Pictures/2.1.png)
 原因在`ans.Add(res);`这句代码，这里添加的实际上是`res`的引用而非副本，所以当修改`res`时，`ans`中的所有元素都会收到影响，当递归调用结束后`res`最终会变为空，所以`ans`中的所有元素最终也会为空。
 
